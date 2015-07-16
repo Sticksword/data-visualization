@@ -1,6 +1,7 @@
 # data-visualization
 dabblings in data visualization
 
+NOTE: PLEASE DO NOT CLICK ON LINKS. PROJECT SITES NOT AVAILABLE YET.
 #Scott Murray D3 dabbles
 1. [Bar Graph Example]()
 2. [Scatterplot Example]()
