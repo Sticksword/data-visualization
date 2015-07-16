@@ -16,13 +16,21 @@
     <script src="d3/d3.v3.js"></script>
     <script src="jquery.js"></script>
     <script type="text/javascript">
+        // location.search returns query params -> eg. the stuff at and after ? in www.mysite.com/?12345 -> would return ?12345
+        // slice(1) chops the ? off -> ie. takes the entire thing starting at index 1
         (function(){
             var params = location.search.slice(1),
             parts = params.split('!'),
+            // the logic is that the js file to be appended is tied with the query param -> eg. ?1 would mean append 1.js to index.html
+            // if it's clickable is tied to the second param -> ?1!0 means not clickable, ?3!1 means clickable
+            // +parts[1] essentially force casting it to an int -> the '+' symbol is dubbed 'unary plus operator'
             clickable = +parts[1],
             script = parts[0] + ".js";
             if (clickable) $('body').addClass('clickable');
+            // if clickable, then we add 'clickable' class
+            // append whatever script is mentioned in the query params
             $('<script>').appendTo('body').load(script);
+
         })();
     </script>
 
